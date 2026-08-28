@@ -489,3 +489,4 @@ and propagate updates.
 - Python can automate database initialization and data loading.
 - Timers and schedulers allow CDC operations to run periodically.
 - These videos lay the foundation for Coding Activities 13.3 through 13.5.
+
