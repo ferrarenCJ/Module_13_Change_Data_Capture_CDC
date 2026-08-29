@@ -1,11 +1,24 @@
-# Self-Study Discussion 13.1: Change Data Capture (CDC)
+# Self-Study Discussion 13.1: Thinking Like a Data Scientist - CDC
 
-## Prompt Reflection
+One resource that I found particularly helpful during this module is the official Docker documentation. Since several activities required creating, initializing, and deleting database containers, the Docker command references helped me better understand how container port mappings, container names, and database images work.
 
-Change Data Capture (CDC) is a technique used to identify, capture, and propagate changes made to a source database. CDC helps ensure that downstream systems remain synchronized without requiring full data reloads.
+Resource:
 
-A practical example of CDC is a gas utility maintenance and asset management system. The operational database serves as the source of truth and contains information about assets, inspections, technicians, and work orders. Multiple downstream systems may rely on the same data for reporting, analytics, dashboards, and notifications.
+https://docs.docker.com/
 
-### Change Detection
+Another useful resource was the PyMySQL documentation, which helped me understand how Python applications connect to MySQL databases and execute SQL statements programmatically.
 
-Change detection occurs 
+Resource:
+
+https://pymysql.readthedocs.io/
+
+These resources were especially helpful when working through Activities 13.3 through 13.5. The module required creating a CDC pipeline that propagated data from MySQL to MongoDB, Redis, and Cassandra. Understanding how Docker containers communicate through mapped ports and how Python database drivers establish connections made troubleshooting much easier.
+
+One tip I would share with classmates is to verify each database independently before running the scheduler. For example:
+
+- Verify MySQL using `SHOW DATABASES` and `SHOW TABLES`
+- Verify MongoDB using `mongosh` and `db.posts.find()`
+- Verify Redis using `GET LastInsertDate`
+- Verify Cassandra using `SELECT * FROM posts`
+
+Testing each component separately helped me quickly identify issues with ports
